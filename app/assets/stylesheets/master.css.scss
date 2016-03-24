@@ -1,6 +1,7 @@
 body {
   font-size: 16px;
   font-family: 'eponymousregular';
+  background: url('swirl_pattern.png');
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -29,7 +30,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
 //------hero box-------//
 
 .hero{
-  background: url('hero.jpg') no-repeat center center fixed;
+  background: url('hero.jpg') no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -44,4 +45,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
   text-shadow: rgba(0,0,0,0.95) 1px 1px;
   border-radius: 10px;
 
+}
+
+//-----features-------//
+
+.features{
+  background: rgba(255, 255, 255, 0.5);
+  padding:15px;
 }
