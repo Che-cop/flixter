@@ -1,0 +1,23 @@
+body {
+  font-size: 16px;
+  font-family: 'eponymousregular';
+}
+
+
+//----------navbar------------//
+
+.navbar {
+  border-radius: 0;
+  font-size:1.4em;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  background:url('dark_wood.png');
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 1.8em;
+  color: #d21b1b;
+}
+
+.navbar-inverse a.navbar-brand:hover {
+  color:white;
+}
