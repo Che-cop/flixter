@@ -17,13 +17,17 @@ h1, h2, h3, h4, h5, h6, .navbar {
   background:url('dark_wood.png');
 }
 
-.navbar-inverse .navbar-brand {
+
+.navbar-inverse a.navbar-brand {
   font-size: 1.8em;
-  color: #d21b1b;
+  color: #fff;
+  background: none;
 }
 
 .navbar-inverse a.navbar-brand:hover {
-  color: #fff;
+  font-size: 1.8em;
+  color: #5cdb5d;
+  background: none;
 }
 
 
@@ -52,4 +56,32 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .features{
   background: rgba(255, 255, 255, 0.5);
   padding:15px;
+}
+
+
+
+
+
+//------Forms-------//
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding:10px;
+}
+
+.booyah-box h2, .booyah-box h1 {
+  margin:10px;
+}
+
+
+
+//-------Misc--------//
+
+.clr{
+    clear:both;
 }
