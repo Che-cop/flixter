@@ -13,6 +13,15 @@
     <br /><br />
     <%= link_to 'Administrator', instructor_course_path(@course), class: 'btn btn-danger btn-large'%>
     <%end%>
+    <br />
+    <br />
+
+    <% if current_user && current_user.enrolled_in?(@course) %>
+      <h3 class="label label-info">You're Enrolled!</h3>
+    <%else%>
+      <%= link_to 'Enroll', course_enrollments_path(@course), class: "btn btn-primary", method: :post%>
+    <%end%>
+
   </div>
   <br /><br />
 
@@ -27,20 +36,20 @@
     <br /><br />
     <div class="section">
       <h3><%=section.title%></h3>
-        <% section.lessons.each do |lesson| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="lesson text-center">
-            <br />
-            <%= link_to lesson_path(lesson) do %>
-              <b><%=lesson.title%></b>
-              <br />
-              <%=lesson.subtitle%>
-              <%end%>
-            </div>
-          </div>
-        <%end%>
-        <br class="clr" />
+      <% section.lessons.each do |lesson| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="lesson text-center">
+          <br />
+          <%= link_to lesson_path(lesson) do %>
+          <b><%=lesson.title%></b>
+          <br />
+          <%=lesson.subtitle%>
+          <%end%>
+        </div>
       </div>
+      <%end%>
+      <br class="clr" />
+    </div>
     <%end%>
   </div>
 </div>
