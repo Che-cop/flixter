@@ -1,16 +1,29 @@
 <script>
 $(function() {
-  $('.lessons').sortable({
+  $('.sections').sortable({
     update: function( event, ui ) {
       $.ajax({
         type: 'PUT',
         url: ui.item.data('update-url'),
         dataType: 'json',
-        data: { lesson: { row_order_position: ui.item.index() } }
+        data: { section: { row_order_position: ui.item.index() } }
       });
     }
   });
  });
+
+ $(function() {
+   $('.lessons').sortable({
+     update: function( event, ui ) {
+       $.ajax({
+         type: 'PUT',
+         url: ui.item.data('update-url'),
+         dataType: 'json',
+         data: { lesson: { row_order_position: ui.item.index() } }
+       });
+     }
+   });
+  });
 </script>
 
 
@@ -33,26 +46,25 @@ $(function() {
 
   <br />
 
-  <ul>
-    <% current_course.sections.each do |section| %>
-    <li>
-      <%= section.title %>
-      <button class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#newlessonModal">
-        Add New Lesson
-      </button>
-      <ul class="lessons">
-        <% section.lessons.rank(:row_order).each do |lesson| %>
-        <li data-update-url="<%= instructor_lesson_path(lesson) %>">
-          <b><%=lesson.title%></b>
-          -
-          <%=lesson.subtitle%>
-        </li>
-        <%end%>
-      </ul>
-
-      <br class="clr" />
-      <br />
-    </li>
+  <ul class="sections">
+    <% current_course.sections.rank(:row_order).each do |section| %>
+      <li data-update-url="<%= instructor_section_path section %>">
+        <%= section.title %>
+          <button class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#newlessonModal">
+            Add New Lesson
+          </button>
+          <ul class="lessons">
+            <% section.lessons.rank(:row_order).each do |lesson| %>
+            <li data-update-url="<%= instructor_lesson_path lesson %>">
+              <b><%=lesson.title%></b>
+              -
+              <%=lesson.subtitle%>
+            </li>
+            <%end%>
+          </ul>
+        <br class="clr" />
+        <br />
+      </li>
     <%end%>
   </ul>
 </div>
