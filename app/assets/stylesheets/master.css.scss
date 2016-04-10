@@ -8,6 +8,18 @@ h1, h2, h3, h4, h5, h6, .navbar {
   margin:0;
 }
 
+//------Flexbox-----//
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
 //----------navbar------------//
 
 .navbar {
